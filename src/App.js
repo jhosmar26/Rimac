@@ -6,16 +6,21 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+import logo from'./assets/images/logo-rimac.svg';
+import phoneIcon from'./assets/images/ic_phone.svg';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <header className="App-header test">
+      <div className="app">
+        <header className="header">
           <Link to="/home">
-            Logo
+            <img src={logo} alt="" />
           </Link>
-          <Link to="/contact">Llámanos</Link>
+          <Link to="/contact">
+            <img src={phoneIcon} alt="" />
+            Llámanos
+          </Link>
         </header>
         <Switch>
           <Route path="/home">
