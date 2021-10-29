@@ -13,26 +13,45 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <header className="header">
-          <Link to="/home">
-            <img src={logo} alt="" />
-          </Link>
-          <Link to="/contact">
-            <img src={phoneIcon} alt="" />
-            Llámanos
-          </Link>
-        </header>
-        <Switch>
-          <Route path="/home">
-            casa dulce casa
-          </Route>
-          <Route path="/contact">
-            llama porfavor
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/home"></Redirect>
-          </Route>
-        </Switch>
+        <div className="wrapper">
+          <div className="grid-38-cols">
+            <header className="header">
+              <Link to="/home">
+                <img className="logo-img" src={logo} alt="" />
+              </Link>
+              <Link className="phone-link" to="/contact">
+                <div className="mobile">
+                  <img src={phoneIcon} alt="" />
+                  <span className="phone-text">
+                    Llámanos
+                  </span>
+                </div>
+                <div class="web">
+                  <span className="text-left">
+                    ¿Tienes alguna duda?
+                  </span>
+                  <div className="purple-right">
+                    <img src={phoneIcon} alt="" />
+                    <span className="phone-text">
+                      (01) 411 6001
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </header>
+          </div>
+          <Switch>
+            <Route path="/home">
+              casa dulce casa
+            </Route>
+            <Route path="/contact">
+              llama porfavor
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/home"></Redirect>
+            </Route>
+          </Switch>
+        </div>
       </div>
     </Router>
   );
