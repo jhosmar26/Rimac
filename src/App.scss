@@ -1,6 +1,9 @@
 :root {
-  --secundary-color: #6769FF;
+  --primary-red: #EF3340;
+  --secundary-blue: #6769FF;
+  --gray-primary: #494F66;
   --gray-secondary: #676F8F;
+  --gray-7: #F7F8FC;
 }
 
 .wrapper {
@@ -37,7 +40,7 @@
   }
 
   & .phone-text{
-    color: var(--secundary-color);
+    color: var(--secundary-blue);
   }
 
   & .text-left{
