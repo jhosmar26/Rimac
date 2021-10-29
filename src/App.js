@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import logo from'./assets/images/logo-rimac.svg';
 import phoneIcon from'./assets/images/ic_phone.svg';
+import Home from'./pages/Home.js';
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
           </div>
           <Switch>
             <Route path="/home">
-              casa dulce casa
+              <Home/>
             </Route>
             <Route path="/contact">
               llama porfavor
