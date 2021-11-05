@@ -1,40 +1,85 @@
 .home{
+  margin-top: 40px;
+  grid-column: 1 / -1;
   position: relative;
-  & .text{
-    grid-column: span 25 / span 25;
-  }
-
-  & .top{
-    font-size: 10px;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  & .title{
-    font-size: 28px;
-    line-height: 36px;
-    letter-spacing: -0.6px;
-  }
-
-  & .bottom{
-    font-size: 14px;
-    line-height: 24px;
-    color: var(--gray-secondary);
-  }
 
   & .red{
     color: var(--primary-red);
   }
-}
 
-.hero__right{
-  position: absolute;
-  right: 0;
+  & .hero{
+    grid-column: 1 / -1;
+    height: 220px;
+    position: relative;
+
+    &__right{
+      position: absolute;
+      right: -55px;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+
+      & .girl{
+        width: 112px;
+        position: relative;
+      }
+
+      & .car{
+        position: absolute;
+        right: -50px;
+        bottom: 60px;
+        width: 165px;
+      }
+
+      & .stars{
+        position: absolute;
+        left: 3px;
+        top: 48px;
+        width: 25px;
+      }
+    }
+
+    & .text{
+      width: 80%;
+
+      &__top{
+        font-size: 10px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      &__title{
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: -0.6px;
+      }
+
+      &__bottom{
+        font-size: 14px;
+        line-height: 24px;
+        color: var(--gray-secondary);
+      }
+    }
+  }
+
+  & .middle-custom{
+    color: inherit;
+  }
+
+  & .form{
+    grid-column: 1 / -1;
+    background-color: red;
+  }
 }
 
 @media (min-width: 768px) {
-  .hero__right{
-    display: none;
+  .home{
+    .hero__right{
+      display: none;
+    }
+    .red.middle-custom{
+      color: var(--primary-red);
+    }
   }
 }

@@ -6,11 +6,18 @@
   --gray-7: #F7F8FC;
 }
 
+.app{
+  overflow-x: hidden;
+}
+
 .wrapper {
   padding-right: 32px;
   padding-left: 32px;
   max-width: 375px;
   margin: auto;
+  display: grid;
+  grid-template-columns: repeat(38, 1fr);
+  position: relative;
 }
 
 .header {
@@ -21,11 +28,11 @@
   grid-column: 1 / -1;
 }
 
-.grid-38-cols {
-  // max-width: 1187px;
-  display: grid;
-  grid-template-columns: repeat(38, 1fr);
-}
+// .grid-38-cols {
+//   // max-width: 1187px;
+//   display: grid;
+//   grid-template-columns: repeat(38, 1fr);
+// }
 
 .logo-img{
   width: 92px;

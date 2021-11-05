@@ -15,32 +15,30 @@ function App() {
     <Router>
       <div className="app">
         <div className="wrapper">
-          <div className="grid-38-cols">
-            <header className="header">
-              <Link to="/home">
-                <img className="logo-img" src={logo} alt="" />
-              </Link>
-              <Link className="phone-link" to="/contact">
-                <div className="mobile">
+          <header className="header">
+            <Link to="/home">
+              <img className="logo-img" src={logo} alt="" />
+            </Link>
+            <Link className="phone-link" to="/contact">
+              <div className="mobile">
+                <img src={phoneIcon} alt="" />
+                <span className="phone-text">
+                  Llámanos
+                </span>
+              </div>
+              <div className="web">
+                <span className="text-left">
+                  ¿Tienes alguna duda?
+                </span>
+                <div className="purple-right">
                   <img src={phoneIcon} alt="" />
                   <span className="phone-text">
-                    Llámanos
+                    (01) 411 6001
                   </span>
                 </div>
-                <div class="web">
-                  <span className="text-left">
-                    ¿Tienes alguna duda?
-                  </span>
-                  <div className="purple-right">
-                    <img src={phoneIcon} alt="" />
-                    <span className="phone-text">
-                      (01) 411 6001
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </header>
-          </div>
+              </div>
+            </Link>
+          </header>
           <Switch>
             <Route path="/home">
               <Home/>
