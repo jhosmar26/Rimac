@@ -7,6 +7,7 @@ export const Home = () => {
   return (
     <div className="home">
       <div className="hero">
+        <div class="background-gray"></div>
         <div className="text">
           <span className="text__top">¡Nuevo!</span>
           <h1 className="text__title"> Seguro
