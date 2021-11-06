@@ -6,8 +6,8 @@ import starsMobile from './../assets/images/stars-mobile.png';
 export const Home = () => {
   return (
     <div className="home">
+      <div className="background-gray"></div>
       <div className="hero">
-        <div class="background-gray"></div>
         <div className="text">
           <span className="text__top">¡Nuevo!</span>
           <h1 className="text__title"> Seguro
@@ -38,7 +38,7 @@ export const Home = () => {
           </label>
         </div>
         <div className="termns">
-          <input type="checkbox"/>
+          <input type="checkbox" className="termns__checkbox"/>
           <div className="text">
             Acepto la <a href="" className="link">Política de Protección de Datos Personales</a> y los <a className="link" href="">Términos y Condiciones.</a>
           </div>
