@@ -22,19 +22,31 @@ export const Home = () => {
           <img className="stars" src={starsMobile} alt="" />
         </div>
       </div>
-      {/* <div className="form">
-        Déjanos tus datos
-        <form>
+      <form className="form">
+        <div className="title">
+          Déjanos tus datos
+        </div>
+        <div className="personal-data">
           <label>
-            <input type="text" name="phone" />
+            <input className="input" type="number" name="doc" placeholder="Nro. de doc"/>
           </label>
           <label>
-            <input type="text" name="phone" />
+            <input className="input" type="number" name="phone" placeholder="Celular"/>
           </label>
-          <input type="submit" value="Cotízalo" />
-        </form>
-
-      </div> */}
+          <label>
+            <input className="input" type="text" name="Cotízalo" placeholder="Placa"/>
+          </label>
+        </div>
+        <div className="termns">
+          <input type="checkbox"/>
+          <div className="text">
+            Acepto la <a href="" className="link">Política de Protección de Datos Personales</a> y los <a className="link" href="">Términos y Condiciones.</a>
+          </div>
+        </div>
+        <div>
+          <input className="button-primary" type="submit" value="Cotízalo"/>
+        </div>
+      </form>
     </div>
   )
 }
