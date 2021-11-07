@@ -61,3 +61,64 @@
     margin-left: 4px;
   }
 }
+
+.boy-section {
+  grid-column: 1 / -1;
+  // background-color: var(--gray-7);
+
+  .red {
+    color: var(--primary-red);
+  }
+
+  &__title {
+    font-size: 28px;
+    font-family: var(--lato);
+    margin-top: 40px;
+
+    &--web {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    font-family: var(--lato);
+    margin-bottom: 24px;
+    color: var(--gray-secundary);
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 44px 24px 36px 24px;
+    display: flex;
+    position: relative;
+    min-height: 148px;
+    box-sizing: border-box;
+
+    &__text {
+      max-width: 160px;
+    }
+
+    & .placa {
+      font-size: 12px;
+      font-family: var(--roboto);
+      color: var(--gray-3);
+      line-height: 20px;
+    }
+
+    & .car-details {
+      font-size: 16px;
+      font-family: var(--roboto);
+      color: var(--gray-primary);
+      line-height: 24px;
+    }
+
+    &__boy {
+      position: absolute;
+      width: 69px;
+      right: 12px;
+      bottom: 0;
+    }
+  }
+}

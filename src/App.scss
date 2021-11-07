@@ -4,7 +4,8 @@
   --primary-red: #ef3340;
   --secundary-blue: #6769ff;
   --gray-primary: #494f66;
-  --gray-secondary: #676f8f;
+  --gray-secundary: #676f8f;
+  --gray-3: #a3abcc;
   --gray-5: #e4e8f7;
   --gray-7: #f7f8fc;
   --web-background: #ecf0ff;
@@ -55,7 +56,7 @@
   }
 
   & .text-left {
-    color: var(--gray-secondary);
+    color: var(--gray-secundary);
   }
 
   .purple-right {
