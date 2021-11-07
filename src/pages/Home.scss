@@ -1,13 +1,13 @@
-.home{
+.home {
   padding-top: 60px;
   grid-column: 1 / -1;
   // position: relative;
 
-  & .red{
+  & .red {
     color: var(--primary-red);
   }
 
-  & .background-gray{
+  & .background-gray {
     position: absolute;
     left: 0;
     top: 0;
@@ -18,32 +18,32 @@
     margin-left: -50%;
   }
 
-  & .hero{
+  & .hero {
     grid-column: 1 / -1;
     height: 220px;
     position: relative;
     margin-top: 32px;
 
-    &__right{
+    &__right {
       position: absolute;
       right: -65px;
       bottom: 0;
       top: 0;
       margin: auto;
 
-      & .girl{
+      & .girl {
         width: 142px;
         position: relative;
       }
 
-      & .car{
+      & .car {
         position: absolute;
         right: -25px;
         bottom: 30px;
         width: 165px;
       }
 
-      & .stars{
+      & .stars {
         position: absolute;
         left: 3px;
         top: 60px;
@@ -51,17 +51,17 @@
       }
     }
 
-    & .text{
+    & .text {
       width: 75%;
 
-      &__top{
+      &__top {
         font-size: 10px;
         letter-spacing: 0.8px;
         text-transform: uppercase;
         font-weight: bold;
       }
 
-      &__title{
+      &__title {
         margin: 8px 0;
         font-size: 28px;
         line-height: 36px;
@@ -70,7 +70,7 @@
         color: var(--gray-primary);
       }
 
-      &__bottom{
+      &__bottom {
         font-size: 14px;
         line-height: 24px;
         color: var(--gray-secondary);
@@ -78,76 +78,79 @@
     }
   }
 
-  & .middle-custom{
+  & .middle-custom {
     color: inherit;
   }
 }
 
-.form{
+.form {
   margin-top: 40px;
   grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
   gap: 24px;
 
-  & .title{
+  & .title {
     color: var(--gray-primary);
     font-size: 24px;
   }
 
-  & .termns{
+  & .termns {
     display: flex;
     gap: 12px;
     margin-bottom: 8px;
     font-size: 12px;
 
-    &__checkbox{
-      margin: 0 !important;
+    &__checkbox {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      position: absolute;
     }
 
-    &__checkbox-custom{
+    &__checkbox-custom {
       width: 20px;
       height: 20px;
       border-radius: 4px;
-      border: 1px solid #43B748;
+      border: 1px solid #43b748;
       flex-shrink: 0;
       color: white;
 
-      &.checked{
-        background-color: #43B748;
+      &.checked {
+        background-color: #43b748;
       }
     }
 
-    & .text{
+    & .text {
       color: var(--gray-secondary);
       font-weight: 300;
     }
 
-    & .link{
+    & .link {
       color: currentColor;
       font-weight: 400;
     }
   }
 }
 
-.personal-data{
+.personal-data {
   display: flex;
   flex-direction: column;
   gap: 16px;
 
-  & .input{
+  & .input {
     width: 100%;
     padding: 16px;
     box-sizing: border-box;
     border-radius: 4px;
-    border: 1px solid #C5CBE0;
-    &::placeholder{
-      color: #C5CBE0;
+    border: 1px solid #c5cbe0;
+    &::placeholder {
+      color: #c5cbe0;
     }
   }
 }
 
-.button-primary{
+.button-primary {
   width: 100%;
   height: 56px;
   background-color: var(--primary-red);
@@ -160,17 +163,17 @@
 }
 
 @media (min-width: 768px) {
-  .home{
-    grid-column: 1 / span 14 ;
-    .hero{
-      & .text{
+  .home {
+    grid-column: 1 / span 14;
+    .hero {
+      & .text {
         width: 100%;
       }
-      &__right{
+      &__right {
         display: none;
       }
     }
-    .red.middle-custom{
+    .red.middle-custom {
       color: var(--primary-red);
     }
   }
