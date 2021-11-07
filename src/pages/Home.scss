@@ -55,24 +55,29 @@
       width: 75%;
 
       &__top {
-        font-size: 10px;
         letter-spacing: 0.8px;
         text-transform: uppercase;
+        font-size: 10px;
         font-weight: bold;
+        font-family: var(--lato);
+        font-weight: 700;
+        color: var(--gray-primary);
       }
 
       &__title {
         margin: 8px 0;
-        font-size: 28px;
         line-height: 36px;
         letter-spacing: -0.6px;
+        font-size: 28px;
         font-weight: 400;
+        font-family: var(--lato);
         color: var(--gray-primary);
       }
 
       &__bottom {
-        font-size: 14px;
         line-height: 24px;
+        font-size: 14px;
+        font-family: var(--roboto);
         color: var(--gray-secondary);
       }
     }
@@ -92,6 +97,7 @@
 
   & .title {
     color: var(--gray-primary);
+    font-family: var(--lato);
     font-size: 24px;
   }
 
@@ -124,11 +130,13 @@
     & .text {
       color: var(--gray-secondary);
       font-weight: 300;
+      font-family: var(--roboto);
     }
 
     & .link {
       color: currentColor;
       font-weight: 400;
+      font-family: var(--lato);
     }
   }
 }
@@ -144,6 +152,7 @@
     box-sizing: border-box;
     border-radius: 4px;
     border: 1px solid #c5cbe0;
+    font-family: var(--lato);
     &::placeholder {
       color: #c5cbe0;
     }
@@ -158,8 +167,9 @@
   text-transform: uppercase;
   border: none;
   border-radius: 8px;
-  font-weight: 700;
   font-size: 14px;
+  font-family: var(--lato);
+  font-weight: 700;
 }
 
 @media (min-width: 768px) {

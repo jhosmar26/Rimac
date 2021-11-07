@@ -1,12 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@300;400&display=swap");
+
 :root {
-  --primary-red: #EF3340;
-  --secundary-blue: #6769FF;
-  --gray-primary: #494F66;
-  --gray-secondary: #676F8F;
-  --gray-7: #F7F8FC;
+  --primary-red: #ef3340;
+  --secundary-blue: #6769ff;
+  --gray-primary: #494f66;
+  --gray-secondary: #676f8f;
+  --gray-7: #f7f8fc;
+
+  --lato: "Lato", sans-serif;
+  --roboto: "Roboto", sans-serif;
 }
 
-.app{
+.app {
   overflow-x: hidden;
 }
 
@@ -31,48 +36,43 @@
   width: 100%;
 }
 
-// .grid-38-cols {
-//   // max-width: 1187px;
-//   display: grid;
-//   grid-template-columns: repeat(38, 1fr);
-// }
-
-.logo-img{
+.logo-img {
   width: 92px;
 }
 
-.phone-link{
+.phone-link {
   text-decoration: none;
 
-  .mobile{
+  .mobile {
     display: flex;
     gap: 8.8px;
   }
 
-  & .phone-text{
+  & .phone-text {
     color: var(--secundary-blue);
+    font-family: var(--lato);
   }
 
-  & .text-left{
+  & .text-left {
     color: var(--gray-secondary);
   }
 
-  .purple-right{
+  .purple-right {
     display: flex;
     gap: 5px;
   }
 }
 
-.web{
+.web {
   display: none;
 }
 
 @media (min-width: 768px) {
-  .mobile{
+  .mobile {
     display: none;
   }
 
-  .web{
+  .web {
     display: inherit;
   }
 
@@ -86,12 +86,12 @@
     grid-column: 2 / -2;
   }
 
-  .phone-link{
-    & .mobile{
+  .phone-link {
+    & .mobile {
       display: none;
     }
 
-    & .web{
+    & .web {
       display: flex;
       gap: 23px;
     }
