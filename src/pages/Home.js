@@ -3,6 +3,7 @@ import { useState } from "react";
 import girlMobile from "./../assets/images/girl-mobile.png";
 import carMobile from "./../assets/images/car-mobile.png";
 import starsMobile from "./../assets/images/stars-mobile.png";
+import girlWeb from "./../assets/images/girl-web.png";
 import clsx from "clsx";
 
 export const Home = () => {
@@ -12,6 +13,7 @@ export const Home = () => {
     <div className="home">
       <div className="background-gray"></div>
       <div className="hero">
+        <img className="girl-web" src={girlWeb} alt="girl-logo" />
         <div className="text">
           <span className="text__top">¡Nuevo!</span>
           <h1 className="text__title">
@@ -25,9 +27,9 @@ export const Home = () => {
           </div>
         </div>
         <div className="hero__right">
-          <img className="car" src={carMobile} alt="" />
-          <img className="girl" src={girlMobile} alt="" />
-          <img className="stars" src={starsMobile} alt="" />
+          <img className="car" src={carMobile} alt="car-mobile" />
+          <img className="girl" src={girlMobile} alt="girl-mobile" />
+          <img className="stars" src={starsMobile} alt="stars-mobile" />
         </div>
       </div>
       <form className="form">
