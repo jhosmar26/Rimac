@@ -4,6 +4,7 @@ import girlMobile from "./../assets/images/girl-mobile.png";
 import carMobile from "./../assets/images/car-mobile.png";
 import starsMobile from "./../assets/images/stars-mobile.png";
 import girlWeb from "./../assets/images/girl-web.png";
+import backgroundWeb from "./../assets/images/background-web.png";
 import clsx from "clsx";
 
 export const Home = () => {
@@ -13,6 +14,11 @@ export const Home = () => {
     <div className="home">
       <div className="background-gray"></div>
       <div className="hero">
+        <img
+          className="background-web"
+          src={backgroundWeb}
+          alt="background-web"
+        />
         <img className="girl-web" src={girlWeb} alt="girl-logo" />
         <div className="text">
           <span className="text__top">¡Nuevo!</span>

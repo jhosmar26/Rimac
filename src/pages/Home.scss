@@ -23,6 +23,10 @@
     position: relative;
     margin-top: 32px;
 
+    & .background-web {
+      display: none;
+    }
+
     & .girl-web {
       display: none;
     }
@@ -186,17 +190,17 @@
       margin-left: inherit;
       height: 100vh;
       margin-top: -60px;
-      grid-column: 1 / 14;
+      grid-column: 1 / 15;
       grid-row-start: 1;
       justify-self: end;
-      // right: 0;
+      background: var(--web-background);
       &:before {
         content: "";
         position: absolute;
         height: 100%;
         right: 100%;
         width: 50vw;
-        background: var(--gray-7);
+        background: var(--web-background);
       }
     }
 
@@ -207,6 +211,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: static;
+      margin-top: 80px;
+
+      & .background-web {
+        display: inherit;
+        min-width: 500px;
+        width: 150%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        justify-self: end;
+        z-index: -1;
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-column: 1 / span 14;
+      }
 
       & .girl-web {
         display: inherit;
@@ -228,6 +248,12 @@
 
     & .form {
       grid-column: 22 / span 9;
+      margin-top: 80px;
+
+      & .button-primary {
+        max-width: 192px;
+        margin-top: 8px;
+      }
     }
   }
 }
