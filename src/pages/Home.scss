@@ -1,7 +1,6 @@
 .home {
   padding-top: 60px;
   grid-column: 1 / -1;
-  // position: relative;
 
   & .red {
     color: var(--primary-red);
@@ -174,17 +173,48 @@
 
 @media (min-width: 768px) {
   .home {
-    grid-column: 1 / span 14;
+    display: grid;
+    grid-template-columns: repeat(38, 1fr);
+    .background-gray {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-left: inherit;
+      height: 100vh;
+      margin-top: -60px;
+      grid-column: 1 / 14;
+      grid-row-start: 1;
+      justify-self: end;
+      // right: 0;
+      &:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        right: 100%;
+        width: 50vw;
+        background: var(--gray-7);
+      }
+    }
+
     .hero {
+      grid-column: 2 / span 9;
+      grid-row-start: 1;
+
       & .text {
         width: 100%;
       }
+
       &__right {
         display: none;
       }
+
+      .red.middle-custom {
+        color: var(--primary-red);
+      }
     }
-    .red.middle-custom {
-      color: var(--primary-red);
+
+    & .form {
+      grid-column: 22 / span 9;
     }
   }
 }

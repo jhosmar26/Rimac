@@ -1,14 +1,14 @@
-import './App.scss';
+import "./App.scss";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
-  Redirect
+  Redirect,
 } from "react-router-dom";
-import logo from'./assets/images/logo-rimac.svg';
-import phoneIcon from'./assets/images/ic_phone.svg';
-import Home from'./pages/Home.js';
+import logo from "./assets/images/logo-rimac.svg";
+import phoneIcon from "./assets/images/ic_phone.svg";
+import Home from "./pages/Home.js";
 
 function App() {
   return (
@@ -22,30 +22,22 @@ function App() {
             <Link className="phone-link" to="/contact">
               <div className="mobile">
                 <img src={phoneIcon} alt="" />
-                <span className="phone-text">
-                  Llámanos
-                </span>
+                <span className="phone-text">Llámanos</span>
               </div>
               <div className="web">
-                <span className="text-left">
-                  ¿Tienes alguna duda?
-                </span>
+                <span className="text-left">¿Tienes alguna duda?</span>
                 <div className="purple-right">
                   <img src={phoneIcon} alt="" />
-                  <span className="phone-text">
-                    (01) 411 6001
-                  </span>
+                  <span className="phone-text">(01) 411 6001</span>
                 </div>
               </div>
             </Link>
           </header>
           <Switch>
             <Route path="/home">
-              <Home/>
+              <Home />
             </Route>
-            <Route path="/contact">
-              llama porfavor
-            </Route>
+            <Route path="/contact">llama porfavor</Route>
             <Route exact path="/">
               <Redirect to="/home"></Redirect>
             </Route>
