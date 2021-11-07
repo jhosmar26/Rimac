@@ -36,7 +36,7 @@ export const Home = () => {
           <label>
             <input
               className="input"
-              type="number"
+              type="text"
               name="doc"
               placeholder="Nro. de doc"
             />
@@ -44,7 +44,7 @@ export const Home = () => {
           <label>
             <input
               className="input"
-              type="number"
+              type="tel"
               name="phone"
               placeholder="Celular"
             />
@@ -53,7 +53,7 @@ export const Home = () => {
             <input
               className="input"
               type="text"
-              name="Cotízalo"
+              name="placa"
               placeholder="Placa"
             />
           </label>
