@@ -9,6 +9,7 @@ import {
 import logo from "./assets/images/logo-rimac.svg";
 import phoneIcon from "./assets/images/ic_phone.svg";
 import Home from "./pages/Home.js";
+import Plan from "./pages/Plan.js";
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
           <Switch>
             <Route path="/home">
               <Home />
+            </Route>
+            <Route path="/arma-tu-plan">
+              <Plan />
             </Route>
             <Route path="/contact">llama porfavor</Route>
             <Route exact path="/">
