@@ -96,11 +96,11 @@ export const Home = () => {
           </label>
           <div className="text">
             Acepto la{" "}
-            <a href="" className="link">
+            <a href="/" className="link">
               Política de Protección de Datos Personales
             </a>{" "}
             y los{" "}
-            <a className="link" href="">
+            <a href="/" className="link">
               Términos y Condiciones.
             </a>
           </div>
