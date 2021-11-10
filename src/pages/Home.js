@@ -1,5 +1,5 @@
 import "./Home.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import girlMobile from "./../assets/images/girl-mobile.png";
 import carMobile from "./../assets/images/car-mobile.png";
 import starsMobile from "./../assets/images/stars-mobile.png";
@@ -8,7 +8,9 @@ import backgroundWeb from "./../assets/images/background-web.png";
 import clsx from "clsx";
 
 const tipoDocumentoArr = ["DNI", "Pasaporte"];
+
 export const Home = () => {
+  const [dataUser, setDataUser] = useState({});
   const [termns, setTermns] = useState(false);
   const [documento, setDocumento] = useState("");
   const [tipoDocumento, setTipoDocumento] = useState(0);
@@ -19,23 +21,36 @@ export const Home = () => {
     setPlaca(event.target.value);
   };
 
+  const handleTipoDocumento = (event) => {
+    setTipoDocumento(event.target.value);
+    console.log(tipoDocumento);
+  };
+
   const handleFetch = async (event) => {
     event.preventDefault();
-    const data = { name: "Jhose" };
+    const dataToFetch = {
+      name: "Juan",
+      documento,
+      tipoDocumento,
+      celular,
+      placa,
+    };
     const response = await fetch("https://jsonplaceholder.typicode.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        body: JSON.stringify(data),
+        body: JSON.stringify(dataToFetch),
       },
     });
-    const postData = await response.json();
-    console.log(postData);
-    // data.placa=;
-    // agregar PLACA
+    const data = await response.json();
+    setDataUser({ ...dataToFetch, ...data });
     // pusehar al context
     // redirect
   };
+
+  useEffect(() => {
+    console.log(dataUser, "aeaeaeaea");
+  }, [dataUser]);
 
   return (
     <div className="home">
@@ -70,9 +85,15 @@ export const Home = () => {
         <div className="personal-data">
           <div>
             <label>
-              <select className="" required>
-                <option value="1">dni</option>
-                <option value="2">passport</option>
+              <select
+                name="tipoDocumentos"
+                className=""
+                value={tipoDocumento}
+                onChange={handleTipoDocumento}
+                required
+              >
+                <option value="0">{tipoDocumentoArr[0]}</option>
+                <option value="1">{tipoDocumentoArr[1]}</option>
               </select>
             </label>
             <input
