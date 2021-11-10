@@ -7,8 +7,12 @@ import girlWeb from "./../assets/images/girl-web.png";
 import backgroundWeb from "./../assets/images/background-web.png";
 import clsx from "clsx";
 
+const tipoDocumentoArr = ["DNI", "Pasaporte"];
 export const Home = () => {
   const [termns, setTermns] = useState(false);
+  const [documento, setDocumento] = useState("");
+  const [tipoDocumento, setTipoDocumento] = useState(0);
+  const [celular, setCelular] = useState("");
   const [placa, setPlaca] = useState("");
 
   const handlePlaca = (event) => {
@@ -17,10 +21,16 @@ export const Home = () => {
 
   const handleFetch = async (event) => {
     event.preventDefault();
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/users/1/"
-    );
-    const data = await response.json();
+    const data = { name: "Jhose" };
+    const response = await fetch("https://jsonplaceholder.typicode.com/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        body: JSON.stringify(data),
+      },
+    });
+    const postData = await response.json();
+    console.log(postData);
     // data.placa=;
     // agregar PLACA
     // pusehar al context
@@ -58,21 +68,32 @@ export const Home = () => {
       <form className="form" onSubmit={handleFetch}>
         <div className="title">Déjanos tus datos</div>
         <div className="personal-data">
-          <label>
+          <div>
+            <label>
+              <select className="" required>
+                <option value="1">dni</option>
+                <option value="2">passport</option>
+              </select>
+            </label>
             <input
               className="input"
               type="text"
               name="doc"
               placeholder="Nro. de doc"
+              value={documento}
+              onChange={(event) => setDocumento(event.target.value)}
               required
             />
-          </label>
+            <label></label>
+          </div>
           <label>
             <input
               className="input"
               type="tel"
               name="phone"
               placeholder="Celular"
+              value={celular}
+              onChange={(event) => setCelular(event.target.value)}
               required
             />
           </label>
