@@ -1,11 +1,30 @@
 import "./Plan.scss";
 import rimacBoy from "./../assets/images/rimac-boy.png";
-import iconPlan1 from "./../assets/images/icon-plan-1.png";
-import iconPlan2 from "./../assets/images/icon-plan-2.png";
-import iconPlan3 from "./../assets/images/icon-plan-3.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import clsx from "clsx";
+import Toggle from "components/Toggle";
+
+const cardsData = [
+  {
+    title: "LLanta robada",
+    description:
+      "He salido de casa a las cuatro menos cinco para ir a la academia de ingles de mi pueblo (Sant Cugat, al lado de Barcelona) con mi bici, na llego a la academia que está en el centro del pueblo en una plaza medio-grande y dejo donde siempre la bici atada con una pitón a un sitio de esos de poner las bicis",
+    imgUrl: "/images/icon-plan-1.png",
+  },
+  {
+    title: "Choque y/o pasarte la luz roja",
+    description:
+      "He salido de casa a las cuatro menos cinco para ir a la academia de ingles de mi pueblo (Sant Cugat, al lado de Barcelona) con mi bici, na llego a la academia que está en el centro del pueblo en una plaza medio-grande y dejo donde siempre la bici atada con una pitón a un sitio de esos de poner las bicis",
+    imgUrl: "/images/icon-plan-2.png",
+  },
+  {
+    title: "Atropello en la vía Evitamiento",
+    description:
+      "He salido de casa a las cuatro menos cinco para ir a la academia de ingles de mi pueblo (Sant Cugat, al lado de Barcelona) con mi bici, na llego a la academia que está en el centro del pueblo en una plaza medio-grande y dejo donde siempre la bici atada con una pitón a un sitio de esos de poner las bicis",
+    imgUrl: "/images/icon-plan-3.png",
+  },
+];
 
 export const Plan = () => {
   const [sumValue, setSumValue] = useState(14.3);
@@ -28,6 +47,10 @@ export const Plan = () => {
       const newValue = num - 0.5;
       return newValue >= minValue ? newValue : num;
     });
+  };
+
+  const handleShowMore = () => {
+    console.log("aea manooo");
   };
 
   return (
@@ -111,91 +134,24 @@ export const Plan = () => {
             </div>
           </div>
           <div className="cards">
-            <div className="card">
-              <img className="card__icon" src={iconPlan1} alt="" />
-              <div className="card__right">
-                <div className="card__top">
-                  <div className="card__top--title">LLanta robada</div>
-                  <label className="card__switch" htmlFor="checkbox">
-                    <input
-                      className="card__switch--input"
-                      type="checkbox"
-                      id="checkbox"
-                      checked={cobertura1}
-                      onChange={() => setCobertura1(!cobertura1)}
-                    />
-                    <div className="card__switch slider round"></div>
-                  </label>
-                </div>
-                <div className="card__description">
-                  He salido de casa a las cuatro menos cinco para ir a la
-                  academia de ingles de mi pueblo (Sant Cugat, al lado de
-                  Barcelona) con mi bici, na llego a la academia que está en el
-                  centro del pueblo en una plaza medio-grande y dejo donde
-                  siempre la bici atada con una pitón a un sitio de esos de
-                  poner las bicis
-                </div>
-                <div className="card__toggle-btn">Ver más</div>
-              </div>
-            </div>
-            <div className="card">
-              <img className="card__icon" src={iconPlan2} alt="" />
-              <div className="card__right">
-                <div className="card__top">
-                  <div className="card__top--title">
-                    Choque y/o pasarte la luz roja
-                  </div>
-                  <label className="card__switch" htmlFor="checkbox2">
-                    <input
-                      className="card__switch--input"
-                      type="checkbox"
-                      id="checkbox2"
-                      checked={cobertura2}
-                      onChange={() => setCobertura2(!cobertura2)}
-                    />
-                    <div className="card__switch slider round"></div>
-                  </label>
-                </div>
-                <div className="card__description">
-                  He salido de casa a las cuatro menos cinco para ir a la
-                  academia de ingles de mi pueblo (Sant Cugat, al lado de
-                  Barcelona) con mi bici, na llego a la academia que está en el
-                  centro del pueblo en una plaza medio-grande y dejo donde
-                  siempre la bici atada con una pitón a un sitio de esos de
-                  poner las bicis
-                </div>
-                <div className="card__toggle-btn">Ver más</div>
-              </div>
-            </div>
-            <div className="card">
-              <img className="card__icon" src={iconPlan3} alt="" />
-              <div className="card__right">
-                <div className="card__top">
-                  <div className="card__top--title">
-                    Atropello en la vía Evitamiento
-                  </div>
-                  <label className="card__switch" htmlFor="checkbox3">
-                    <input
-                      className="card__switch--input"
-                      type="checkbox"
-                      id="checkbox3"
-                      checked={cobertura3}
-                      onChange={() => setCobertura3(!cobertura3)}
-                    />
-                    <div className="card__switch slider round"></div>
-                  </label>
-                </div>
-                <div className="card__description">
-                  He salido de casa a las cuatro menos cinco para ir a la
-                  academia de ingles de mi pueblo (Sant Cugat, al lado de
-                  Barcelona) con mi bici, na llego a la academia que está en el
-                  centro del pueblo en una plaza medio-grande y dejo donde
-                  siempre la bici atada con una pitón a un sitio de esos de
-                  poner las bicis
-                </div>
-                <div className="card__toggle-btn">Ver más</div>
-              </div>
-            </div>
+            <Toggle
+              data={cardsData[0]}
+              state={cobertura1}
+              setterState={setCobertura1}
+              id="cobertura1"
+            />
+            <Toggle
+              data={cardsData[1]}
+              state={cobertura2}
+              setterState={setCobertura2}
+              id="cobertura2"
+            />
+            <Toggle
+              data={cardsData[2]}
+              state={cobertura3}
+              setterState={setCobertura3}
+              id="cobertura3"
+            />
           </div>
         </div>
       </section>
