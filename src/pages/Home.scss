@@ -190,7 +190,7 @@
       width: 100%;
       margin-left: inherit;
       height: 100vh;
-      margin-top: -60px;
+      margin-top: -70px;
       grid-column: 1 / 15;
       grid-row-start: 1;
       justify-self: end;
@@ -200,6 +200,7 @@
         position: absolute;
         height: 100%;
         right: 100%;
+        top: 0;
         width: 50vw;
         background: var(--web-background);
       }
