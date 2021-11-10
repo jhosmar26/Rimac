@@ -49,10 +49,6 @@ export const Plan = () => {
     });
   };
 
-  const handleShowMore = () => {
-    console.log("aea manooo");
-  };
-
   return (
     <>
       <div className="separator"></div>

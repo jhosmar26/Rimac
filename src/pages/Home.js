@@ -9,6 +9,23 @@ import clsx from "clsx";
 
 export const Home = () => {
   const [termns, setTermns] = useState(false);
+  const [placa, setPlaca] = useState("");
+
+  const handlePlaca = (event) => {
+    setPlaca(event.target.value);
+  };
+
+  const handleFetch = async (event) => {
+    event.preventDefault();
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/users/1/"
+    );
+    const data = await response.json();
+    // data.placa=;
+    // agregar PLACA
+    // pusehar al context
+    // redirect
+  };
 
   return (
     <div className="home">
@@ -38,7 +55,7 @@ export const Home = () => {
           <img className="stars" src={starsMobile} alt="stars-mobile" />
         </div>
       </div>
-      <form className="form">
+      <form className="form" onSubmit={handleFetch}>
         <div className="title">Déjanos tus datos</div>
         <div className="personal-data">
           <label>
@@ -47,6 +64,7 @@ export const Home = () => {
               type="text"
               name="doc"
               placeholder="Nro. de doc"
+              required
             />
           </label>
           <label>
@@ -55,6 +73,7 @@ export const Home = () => {
               type="tel"
               name="phone"
               placeholder="Celular"
+              required
             />
           </label>
           <label>
@@ -63,6 +82,9 @@ export const Home = () => {
               type="text"
               name="placa"
               placeholder="Placa"
+              value={placa}
+              onChange={handlePlaca}
+              required
             />
           </label>
         </div>
