@@ -1,21 +1,26 @@
 import "./Home.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import girlMobile from "./../assets/images/girl-mobile.png";
 import carMobile from "./../assets/images/car-mobile.png";
 import starsMobile from "./../assets/images/stars-mobile.png";
 import girlWeb from "./../assets/images/girl-web.png";
 import backgroundWeb from "./../assets/images/background-web.png";
 import clsx from "clsx";
+import { UserContext } from "UserContext";
 
 const tipoDocumentoArr = ["DNI", "Pasaporte"];
 
 export const Home = () => {
-  const [dataUser, setDataUser] = useState({});
   const [termns, setTermns] = useState(false);
   const [documento, setDocumento] = useState("");
   const [tipoDocumento, setTipoDocumento] = useState(0);
   const [celular, setCelular] = useState("");
   const [placa, setPlaca] = useState("");
+
+  const history = useHistory();
+
+  const { setUserData } = useContext(UserContext);
 
   const handlePlaca = (event) => {
     setPlaca(event.target.value);
@@ -26,9 +31,9 @@ export const Home = () => {
     console.log(tipoDocumento);
   };
 
-  const handleFetch = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const dataToFetch = {
+    const dataForm = {
       name: "Juan",
       documento,
       tipoDocumento,
@@ -39,18 +44,16 @@ export const Home = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        body: JSON.stringify(dataToFetch),
+        body: JSON.stringify(dataForm),
       },
     });
-    const data = await response.json();
-    setDataUser({ ...dataToFetch, ...data });
+    const dataPost = await response.json();
+    const dataUser = { ...dataForm, ...dataPost };
+    setUserData(dataUser);
+    history.push("/arma-tu-plan");
     // pusehar al context
     // redirect
   };
-
-  useEffect(() => {
-    console.log(dataUser, "aeaeaeaea");
-  }, [dataUser]);
 
   return (
     <div className="home">
@@ -80,7 +83,7 @@ export const Home = () => {
           <img className="stars" src={starsMobile} alt="stars-mobile" />
         </div>
       </div>
-      <form className="form" onSubmit={handleFetch}>
+      <form className="form" onSubmit={handleSubmit}>
         <div className="title">Déjanos tus datos</div>
         <div className="personal-data">
           <div>

@@ -1,9 +1,10 @@
 import "./Plan.scss";
 import rimacBoy from "./../assets/images/rimac-boy.png";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import clsx from "clsx";
 import Toggle from "components/Toggle";
+import { UserContext } from "UserContext";
 
 const cardsData = [
   {
@@ -27,6 +28,8 @@ const cardsData = [
 ];
 
 export const Plan = () => {
+  const { userData } = useContext(UserContext);
+
   const [sumValue, setSumValue] = useState(14.3);
   const [cobertura1, setCobertura1] = useState(false);
   const [cobertura2, setCobertura2] = useState(false);
@@ -70,6 +73,7 @@ export const Plan = () => {
           <div className="card">
             <div className="card__text">
               <div className="placa">Placa: C2U-114</div>
+              {userData ? <div>{userData.id}</div> : <div>loading</div>}
               <div className="car-details">Wolkswagen 2019 Golf</div>
             </div>
             <img className="card__boy" src={rimacBoy} alt="rimac-boy" />
