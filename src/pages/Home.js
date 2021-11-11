@@ -51,8 +51,6 @@ export const Home = () => {
     const dataUser = { ...dataForm, ...dataPost };
     setUserData(dataUser);
     history.push("/arma-tu-plan");
-    // pusehar al context
-    // redirect
   };
 
   return (
@@ -104,6 +102,7 @@ export const Home = () => {
               type="text"
               name="doc"
               placeholder="Nro. de doc"
+              title="Solo números"
               value={documento}
               onChange={(event) => setDocumento(event.target.value)}
               required
@@ -116,6 +115,9 @@ export const Home = () => {
               type="tel"
               name="phone"
               placeholder="Celular"
+              pattern="[0-9]{9}"
+              maxlength="9"
+              title="Nueve digitos, solo números"
               value={celular}
               onChange={(event) => setCelular(event.target.value)}
               required
@@ -127,6 +129,7 @@ export const Home = () => {
               type="text"
               name="placa"
               placeholder="Placa"
+              maxlength="6"
               value={placa}
               onChange={handlePlaca}
               required
