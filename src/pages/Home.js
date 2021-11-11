@@ -1,5 +1,5 @@
 import "./Home.scss";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import girlMobile from "./../assets/images/girl-mobile.png";
 import carMobile from "./../assets/images/car-mobile.png";
