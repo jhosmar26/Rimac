@@ -57,14 +57,28 @@ export const Plan = () => {
       <div className="separator"></div>
       <div className="background-steps"></div>
       <div className="steps">
+        <div className="steps__web">
+          <div className="step">
+            <div className="circle">
+              <div className="circle__first">1</div>
+            </div>
+            Datos
+          </div>
+          <div className="step">
+            <div className="circle circle__second active">
+              <div className="circle__second">2</div>
+            </div>
+            Arma tu plan
+          </div>
+        </div>
         <Link to="/home" className="back"></Link>
-        <div className="steps__text">Paso 2 de 2</div>
+        <div className="steps__text mobile">Paso 2 de 2</div>
         <div className="steps__progress-bar"></div>
       </div>
       <section className="boy-section">
         <div className="boy-section__top">
           <div className="boy-section__title--web">
-            ¡Hola, <span className="red">Juan!</span>
+            ¡Hola, <span className="red">{userData.name}</span>
           </div>
           <div className="boy-section__title">Mira las coberturas</div>
           <div className="boy-section__subtitle">
@@ -72,8 +86,7 @@ export const Plan = () => {
           </div>
           <div className="card">
             <div className="card__text">
-              <div className="placa">Placa: C2U-114</div>
-              {userData ? <div>{userData.id}</div> : <div>loading</div>}
+              <div className="placa">Placa: {userData.placa}</div>
               <div className="car-details">Wolkswagen 2019 Golf</div>
             </div>
             <img className="card__boy" src={rimacBoy} alt="rimac-boy" />
@@ -157,8 +170,61 @@ export const Plan = () => {
       </section>
       <section className="bottom">
         <div>
+          <div>Monto</div>
           <div className="bottom__price">$35.00</div>
           <div className="bottom__cycle">Mensual</div>
+        </div>
+        <div className="web ">El precio incluye:</div>
+        <div className="bottom__checked web">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12.3178 3.92748C12.634 4.19503 12.6734 4.66827 12.4059 4.98447L6.90588 11.4845C6.76799 11.6474 6.56719 11.7439 6.3538 11.7497C6.14041 11.7556 5.93465 11.6702 5.78808 11.515L2.95474 8.51498C2.67033 8.21384 2.6839 7.73916 2.98503 7.45476C3.28617 7.17035 3.76085 7.18391 4.04526 7.48505L6.30263 9.87521L11.2608 4.01556C11.5284 3.69935 12.0016 3.65992 12.3178 3.92748Z"
+              fill="#43B748"
+            />
+          </svg>
+          Llanta de repuesto
+        </div>
+        <div className="bottom__checked web">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12.3178 3.92748C12.634 4.19503 12.6734 4.66827 12.4059 4.98447L6.90588 11.4845C6.76799 11.6474 6.56719 11.7439 6.3538 11.7497C6.14041 11.7556 5.93465 11.6702 5.78808 11.515L2.95474 8.51498C2.67033 8.21384 2.6839 7.73916 2.98503 7.45476C3.28617 7.17035 3.76085 7.18391 4.04526 7.48505L6.30263 9.87521L11.2608 4.01556C11.5284 3.69935 12.0016 3.65992 12.3178 3.92748Z"
+              fill="#43B748"
+            />
+          </svg>
+          Analisis de motor
+        </div>
+        <div className="bottom__checked web">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12.3178 3.92748C12.634 4.19503 12.6734 4.66827 12.4059 4.98447L6.90588 11.4845C6.76799 11.6474 6.56719 11.7439 6.3538 11.7497C6.14041 11.7556 5.93465 11.6702 5.78808 11.515L2.95474 8.51498C2.67033 8.21384 2.6839 7.73916 2.98503 7.45476C3.28617 7.17035 3.76085 7.18391 4.04526 7.48505L6.30263 9.87521L11.2608 4.01556C11.5284 3.69935 12.0016 3.65992 12.3178 3.92748Z"
+              fill="#43B748"
+            />
+          </svg>
+          Aros gratis
         </div>
         <button className="button-primary">Lo quiero</button>
       </section>

@@ -9,13 +9,16 @@
 
 .background-steps {
   grid-row-start: 2;
-  // background-color: var(--gray-7);
-  background-color: red;
+  grid-row-end: 11;
+  background-color: var(--gray-7);
   width: 500%;
-  height: 100px;
+  height: 100%;
   grid-column: 1 / span 10;
   justify-self: end;
   display: none;
+  transform-origin: top right;
+  transform: scale(25, 10);
+  z-index: -999;
 }
 
 .steps {
@@ -26,6 +29,10 @@
   gap: 12px;
   margin-top: 12px;
   margin-bottom: 12px;
+
+  &__web {
+    display: none;
+  }
 
   & .back {
     width: 24px;
@@ -78,6 +85,10 @@
 
     &--web {
       display: none;
+      font-size: 40px;
+      color: var(--gray-primary);
+      font-family: var(--lato);
+      margin-top: 24px;
     }
   }
 
@@ -253,5 +264,95 @@
     color: var(--gray-primary);
     text-transform: uppercase;
     letter-spacing: 0.8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .background-steps {
+    display: inherit;
+  }
+
+  .boy-section {
+    grid-column: 14 / span 11;
+    grid-row-start: 2;
+
+    &__title {
+      display: none;
+
+      &--web {
+        display: inherit;
+      }
+    }
+  }
+
+  .steps {
+    grid-column: 1 / 10;
+    align-items: flex-start;
+
+    .step {
+      display: flex;
+      gap: 16px;
+      color: var(--gray-3);
+    }
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      border: 1px solid #c5cbe0;
+      border-radius: 50%;
+      position: relative;
+
+      &__first {
+        text-align: center;
+        color: #c5cbe0;
+      }
+      &__second {
+        text-align: center;
+        color: white;
+      }
+
+      &.active {
+        border-color: #6f7dff;
+        background-color: #6f7dff;
+      }
+    }
+
+    .active {
+      color: #6f7dff;
+    }
+
+    &__web {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__progress-bar {
+      display: none;
+    }
+  }
+
+  .sum-form {
+    grid-column: 14 / span 12;
+  }
+
+  .coberturas {
+    grid-column: 14 / span 12;
+  }
+
+  .bottom {
+    grid-column: 29 / span 7;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+
+    &__checked {
+      color: var(--gray-primary);
+      display: flex;
+      gap: 20px;
+    }
+    .web {
+      display: inherit;
+    }
   }
 }

@@ -87,8 +87,8 @@ export const Home = () => {
           <div>
             <label>
               <select
+                className="hidden"
                 name="tipoDocumentos"
-                className=""
                 value={tipoDocumento}
                 onChange={handleTipoDocumento}
                 required
