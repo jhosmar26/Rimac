@@ -130,6 +130,7 @@ export const Home = () => {
               name="placa"
               placeholder="Placa"
               maxlength="6"
+              minlength="6"
               value={placa}
               onChange={handlePlaca}
               required
