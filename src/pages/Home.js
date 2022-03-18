@@ -1,5 +1,5 @@
 import "./Home.scss";
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import girlMobile from "./../assets/images/girl-mobile.png";
 import carMobile from "./../assets/images/car-mobile.png";
@@ -17,10 +17,19 @@ export const Home = () => {
   const [tipoDocumento, setTipoDocumento] = useState(0);
   const [celular, setCelular] = useState("");
   const [placa, setPlaca] = useState("");
+  const [buttonAble, setButtonAble] = useState(false);
 
   const history = useHistory();
 
   const { setUserData } = useContext(UserContext);
+
+  useEffect(() => {
+    if (termns === true && documento !== "" && celular !== "" && placa !== "") {
+      setButtonAble(true);
+    } else {
+      setButtonAble(false);
+    }
+  }, [termns, documento, celular, placa]);
 
   const handlePlaca = (event) => {
     setPlaca(event.target.value);
@@ -176,9 +185,11 @@ export const Home = () => {
             </a>
           </div>
         </div>
-        <div>
-          <input className="button-primary" type="submit" value="Cotízalo" />
-        </div>
+        <input
+          className={clsx("button-primary", buttonAble ? "" : "disabled")}
+          type="submit"
+          value="Cotízalo"
+        />
       </form>
     </div>
   );

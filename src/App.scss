@@ -17,6 +17,7 @@
 
 .app {
   overflow-x: hidden;
+  font-family: sans-serif;
 }
 
 .wrapper {
@@ -50,6 +51,7 @@
   .mobile {
     display: flex;
     gap: 8.8px;
+    text-decoration: none;
   }
 
   & .phone-text {
@@ -59,11 +61,13 @@
 
   & .text-left {
     color: var(--gray-secundary);
+    text-decoration: none;
   }
 
   .purple-right {
     display: flex;
     gap: 5px;
+    text-decoration: none;
   }
 }
 

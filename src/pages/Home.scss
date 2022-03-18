@@ -128,6 +128,7 @@
       border: 1px solid #43b748;
       flex-shrink: 0;
       color: white;
+      cursor: pointer;
 
       &.checked {
         background-color: #43b748;
@@ -138,6 +139,7 @@
       color: var(--gray-secundary);
       font-weight: 300;
       font-family: var(--roboto);
+      user-select: none;
     }
 
     & .link {
@@ -178,6 +180,7 @@
   font-family: var(--lato);
   font-weight: 700;
   letter-spacing: 0.8px;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -255,6 +258,10 @@
       & .button-primary {
         max-width: 192px;
         margin-top: 8px;
+
+        &.disabled {
+          opacity: 0.5;
+        }
       }
     }
   }

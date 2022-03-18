@@ -24,19 +24,21 @@ function App() {
             <Link to="/home">
               <img className="logo-img" src={logo} alt="" />
             </Link>
-            <Link className="phone-link" to="/contact">
-              <div className="mobile">
+            <div className="phone-link">
+              <a href="tel:+014116001" className="mobile">
                 <img src={phoneIcon} alt="" />
                 <span className="phone-text">Llámanos</span>
-              </div>
+              </a>
               <div className="web">
-                <span className="text-left">¿Tienes alguna duda?</span>
-                <div className="purple-right">
+                <a href="#" className="text-left">
+                  ¿Tienes alguna duda?
+                </a>
+                <a href="tel:+014116001" className="purple-right">
                   <img src={phoneIcon} alt="" />
                   <span className="phone-text">(01) 411 6001</span>
-                </div>
+                </a>
               </div>
-            </Link>
+            </div>
           </header>
           <UserContext.Provider value={{ userData, setUserData }}>
             <Switch>
@@ -46,7 +48,7 @@ function App() {
               <Route path="/arma-tu-plan">
                 <Plan />
               </Route>
-              <Route path="/contact">llama porfavor</Route>
+              {/* <Route path="/contact">llama porfavor</Route> */}
               <Route exact path="/">
                 <Redirect to="/home"></Redirect>
               </Route>
